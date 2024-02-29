@@ -3,12 +3,12 @@ const app = express()
 const cors = require ('cors')
 app.use(cors())
 
+let PORT = process.env.PORT_NUMBER || 4000
 
 
 
-
-let connection = app.listen(4000,()=>{
-    console.log(`successful, running on port 4000`)
+let connection = app.listen(PORT,()=>{
+    console.log(`successful, running on port ${PORT}`)
 })
 
 let socketClient=require("socket.io")
