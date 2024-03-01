@@ -2,9 +2,20 @@ const express = require ('express')
 const app = express()
 const cors = require ('cors')
 app.use(cors())
+const mongoose = require('mongoose')
 
 let PORT = process.env.PORT_NUMBER || 4000
 
+
+// require('./connection/mongoose.connection')
+let URI = "mongodb+srv://arayosam:X3RFIwvL1klyHXOz@cluster0.ycrt4sy.mongodb.net/loveEjs_db?retryWrites=true&w=majority"
+mongoose.connect(URI)
+.then(()=>{
+    console.log("Mongoose has connected successfully")
+})
+.catch((err)=>{
+    console.log(err);
+})
 
 
 let connection = app.listen(PORT,()=>{
