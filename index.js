@@ -27,7 +27,8 @@ let connection = app.listen(PORT,()=>{
 
 let socketClient=require("socket.io")
 let io = socketClient(connection,{
-    cors :{origin:"*"}
+    cors :{origin:'https://phem.vercel.app',
+    methods: ['GET', 'POST']}
 })
 io.on("connection",(socket)=>{
     // console.log(socket.id)
