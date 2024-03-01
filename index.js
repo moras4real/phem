@@ -17,6 +17,9 @@ mongoose.connect(URI)
     console.log(err);
 })
 
+app.get('/', (req, res)=>{
+    res.sendStatus(200)
+})
 
 let connection = app.listen(PORT,()=>{
     console.log(`successful, running on port ${PORT}`)
